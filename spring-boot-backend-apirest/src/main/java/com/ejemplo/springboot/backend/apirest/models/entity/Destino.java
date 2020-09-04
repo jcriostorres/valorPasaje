@@ -1,91 +1,36 @@
 package com.ejemplo.springboot.backend.apirest.models.entity;
 
-import java.io.Serializable;
+import javax.swing.JOptionPane;
+import java.util.*;
 
+public class Destino {
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
-@Entity
-@Table(name="") 
-public class Destino implements Serializable {
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	
-	@Column
 	private int dias;
 	private int km;
 	private String origen;
 	private String destination;
-	private double descuento;
+	private double DESCUENTO;
 	private double total;
-	
-	
-	public long getId() {
-		return id;
+
+	// metodo
+
+	public void calcularPasaje() {
+		JOptionPane.showMessageDialog(null, "Calcular pasaje");
+		int dias = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantos dias sera su viaje"));
+		int km = Integer.parseInt(JOptionPane.showInputDialog("Ingrese los kilometros de recorrido de el viaje"));
+
+		if (dias > 7 && km > 1000) {
+			DESCUENTO = 0.30;
+		}
+
+		else {
+			DESCUENTO = 1;
+		}
+		km = km * 35000;
+		DESCUENTO = km * DESCUENTO;
+		total = dias + km - DESCUENTO;
+		JOptionPane.showMessageDialog(null, "el total a pagar de su viaje es: " + total);
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public int getDias() {
-		return dias;
-	}
-
-	public void setDias(int dias) {
-		this.dias = dias;
-	}
-
-	public int getKm() {
-		return km;
-	}
-
-	public void setKm(int km) {
-		this.km = km;
-	}
-
-	public String getOrigen() {
-		return origen;
-	}
-
-	public void setOrigen(String origen) {
-		this.origen = origen;
-	}
-
-	public String getDestination() {
-		return destination;
-	}
-
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
-
-	public double getDescuento() {
-		return descuento;
-	}
-
-	public void setDescuento(double descuento) {
-		this.descuento = descuento;
-	}
-
-	public double getTotal() {
-		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 }
