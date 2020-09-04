@@ -17,9 +17,9 @@ además de problemas de incompatibilidad de versiones de Springboot, me tomo cas
 
 Decidí enfocarme en el análisis del algoritmo, los requerimiento funcionales, verifique las entradas y las salidas del cliente.
 
-R1 determinar el valor del pasaje del cliente
+R1 determinar el valor del pasaje del cliente dada la distacia y el nuemro de dias de estadia, si el nuemro de dias es mayor a 7 y la distacia es mayor a 1000 km, se le realiza un descuento del 30%.
 
-Entradas: la distancia en Km  el número de días de estadía.
+Entradas: la distancia en Km del viaje y el número de días de estadía.
 
 Resultado: el valor a pagar total sin descuento y con descuento según las condiciones dadas como las constantes para el descuento como el porcentaje de descuento y 
 el precio por cada km recorrido.
