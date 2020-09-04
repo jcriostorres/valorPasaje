@@ -1,6 +1,6 @@
 # valorPasaje
+
 Calcular el valor de un pasaje dado la distancia en km
-Read me
 
 ALGORITMO PARA DETERMINAR EL VALOR DEL PASAJE
 
